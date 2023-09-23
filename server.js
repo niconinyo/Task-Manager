@@ -6,6 +6,10 @@ const express = require('express');
 const livereload = require("livereload");
 const connectLiveReload = require("connect-livereload");
 
+/* Require the routes in the controllers folder
+--------------------------------------------------------------- */
+const userCtrl = require('./controllers/user')
+
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
@@ -62,7 +66,7 @@ app.get('/seed', function (req, res) {
         })
 });
 
-
+app.use('/user', userCtrl)
 
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
