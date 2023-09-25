@@ -25,7 +25,7 @@ router.get('/', function (req, res) {
 })
 
 
-// Show Route (GET/Read): Will display an individual pet document
+// Show Route (GET/Read): Will display an individual user document
 // using the URL parameter (which is the document _id)
 router.get('/:id', function (req, res) {
     db.user.findById(req.params.id)
