@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: `Edit ${user.tasks.name} | Task Manager`}) %>
+    <link rel="stylesheet" href="/styles/pet-form.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Edit a task</h2>
+        <h4><i>Update your task!</i></h4>
+    </section>
+
+    <form method="POST" action="/user/<%=tasks._id %>?_method=PUT">
+        <!-- Name input -->
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName" name="taskName" value="<%= tasks.name %>" required>
+        <br>
+        <!-- Age input -->
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" value="<%= tasks.title %>" required>
+        <br>
+        <!-- Breed input -->
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" value="<%= tasks.description %>">
+        <br>
+        <!-- Species input -->
+        <label for="species">Status:</label>
+        <select id="species" name="species" required>
+            <% if (tasks.status === "Unfinished") { %>
+            <option value="Unfinished" selected>Unfinished</option>
+            <option value="Almost Done">Almost Done</option>
+            <option value="Finished">Finished</option>
+            <% } if else { %>
+            <option value="Unfinished">Unfinished</option>
+            <option value="Almost Done" selected>Almost Done</option>
+            <option value="Finished">Finished</option>
+            <% } else { %>
+            <option value="Unfinished">Unfinished</option>
+            <option value="Almost Done">Almost Done</option>
+            <option value="Finished" selected>Finished</option>
+            <% } %>
+        </select>
+        <br>
+        <!-- City input -->
+        <label for="dueDate">Have completed by:</label>
+        <input type="date" id="dueDate" name="dueDate" value="<%= tasks.dueDate %>" required>
+        <br>
+        
+    
+        <input type="submit" value="Edit Pet">
+    </form>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Furever Friends'}) %>
+    <link rel="stylesheet" href="/styles/pet-index.css">
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <section class="hero">
+        <h2>Tasks</h2>
+        <h3>What are we getting done today?</h3>
+    </section>
+
+    <main>
+        <section class="listings">
+            <ul>
+                <% for (let task of tasks) { %>
+                <li>
+                    <figure>
+                    
+                        <figcaption>
+                            <h4><%= task.taskName %></h4>
+                            <p><%= task.title %>, <%= pet.status %>, <%= pet.dueDate %></p>
+                            <a href="/controllers/user/tasks/<%= task._id %>">Learn More</a>
+                        </figcaption>
+                    </figure>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

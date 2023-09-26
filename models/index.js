@@ -13,5 +13,7 @@ db.on('connected', function () {
 
 module.exports = {
     user: require('./user'),
-    seedUsers: require('./seed')
+    seedUsers: require('./seed'),
+    tasks: require('./tasks'),
+    category: require('./category'),
 }

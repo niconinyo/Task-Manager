@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <%- include('./partials/head.ejs', {title: 'Task Manager'}) %>
-    <link rel="stylesheet" href="/styles/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+
 
 <body>
     <%- include('./partials/nav.ejs') %>
@@ -12,7 +13,7 @@
     <main>
         <section class="hero">
             <h2>Track Your Tasks</h2>
-            <a href="/controllers/user.js" class="btn">Create New Tasks!</a>
+            <a href="/user/tasks/new" class="btn">Create New Tasks!</a>
         </section>
 
         <section class="about">
@@ -22,25 +23,7 @@
             <a href="/about" class="btn">Learn More</a>
         </section>
 
-        <!-- <section class="featured-pets">
-            <h2>Featured Pets</h2>
-            <ul class="pet-grid">
-                <% for (let pet of pets) { %>
-                <li>
-                    <figure>
-                        <img src="<%= pet.photo %>" alt="Kitten">
-                    </figure>
-                    <figcaption>
-                        <div class="featured-info">
-                            <h3><%= pet.name %></h3>
-                            <p>Age: <%= pet.age %> yr(s)</p>
-                        </div>
-                        <a href="/pets/<%= pet._id %>" class="btn">Learn More</a>
-                    </figcaption>
-                </li>
-                <% } %>
-            </ul>
-        </section> -->
+        
     </main>
 
     <%- include('./partials/footer.ejs') %>
