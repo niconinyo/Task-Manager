@@ -14,6 +14,8 @@ const methodOverride = require('method-override');
 --------------------------------------------------------------- */
 const userCtrl = require('./controllers/user')
 
+const taskCtrl = require('./controllers/tasks')
+
 
 /* Require the db connection, models, and seed data
 --------------------------------------------------------------- */
@@ -48,7 +50,7 @@ app.use(express.static('public'))
 app.use(connectLiveReload());
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use('/user', userCtrl)
+
 
 
 /* Mount routes
@@ -57,57 +59,50 @@ app.use('/user', userCtrl)
 //     res.send('Task Manager')
 // });
 
-// When a GET request is sent to `/seed`, the pets collection is seeded
-app.get('/seed', function (req, res) {
-    // Remove any existing pets
-    db.user.deleteMany({})
-        .then(removedUser => {
-            console.log(`Removed ${removedUser.deletedCount}`)
-            // Seed the pets collection with the seed data
-            db.user.insertMany(db.seedUsers)
-                .then(addedUser => {
-                    console.log(`Added ${addedUser.length} users created`)
-                    res.json(addedUser)
-                })
-        })
-});
+// // When a GET request is sent to `/seed`, the pets collection is seeded
+// app.get('/seed', function (req, res) {
+//     // Remove any existing pets
+//     db.user.deleteMany({})
+//         .then(removedUser => {
+//             console.log(`Removed ${removedUser.deletedCount}`)
+//             // Seed the pets collection with the seed data
+//             db.user.insertMany(db.seedTest.user)
+//                 .then(addedUser => {
+//                     console.log(`Added ${addedUser.length} users created`)
+                   
+//                 })
+//         })
+//     db.tasks.deleteMany({})
+//         .then(removedTasks => {
+//             console.log(`Removed ${removedTasks.deletedCount}`)
+
+//             db.tasks.insertMany(db.seedTest.tasks)
+//                 .then(addedTasks => {
+//                     console.log(`Added ${addedTasks.length} tasks created`)
+//                     res.json(addedTasks)
+//         })
+// });})
 
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    db.user.find({})
-        .then(task => {
-            res.render('landing', {
-                task: task
-            })
-        })
+    res.render('landing') 
 });
 
 // New Route (GET/Read): This route renders a form 
 // which the user will fill out to POST (create) a new location
-app.get('/createUser', (req, res) => {
-    res.render('./new-user')
-})
 
-app.post('/user', (req, res) => {
-    console.log(req.body)
-    db.user.create(req.body)
-        .then(user => res.redirect('/user/' + user._id))
-})
 
-app.get('/home', function (req, res) {
-    db.user.findById({})
-    .then(task => {
-        res.render('home', {
-          task: task
-        })})
-      })
+
 
 
 app.get('/about', function (req, res) {
     res.send('You\'ve hit the about route')
 });
 
+
+app.use('/user', userCtrl)
+app.use('/tasks', taskCtrl)
 // // The "catch-all" route: Runs for any other URL that doesn't match the above routes
 // app.get('*', function (req, res) {
 //     res.send('404 Error: Page Not Found')

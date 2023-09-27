@@ -15,5 +15,4 @@ module.exports = {
     user: require('./user'),
     seedUsers: require('./seed'),
     tasks: require('./tasks'),
-    category: require('./category'),
 }

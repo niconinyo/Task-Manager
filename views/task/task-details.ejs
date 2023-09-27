@@ -2,31 +2,31 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: `${task.name} | Task Manager`}) %>
+    <%-include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/styles/pet-details.css">
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
 
     <div>
         <section class="actions">
-            <button class="btn"><a href="/user/<%= tasks._id %>/edit">Edit</a></button>
-            <form method="POST" action="/user/<%= tasks._id %>?_method=DELETE">
+            <button class="btn"><a href="/tasks/<%= task._id %>/edit">Edit</a></button>
+            <form method="POST" action="/tasks/<%= task._id %>?_method=DELETE">
                 <input class="btn" type="submit" value="Delete" />
             </form>
         </section>
         <h2 class="task-name"><%= task.name %></h2>
         <section>
-            <p><strong>Title:</strong> <%= tasks.newTitle %></p>
-            <p><strong>Description:</strong> <%= tasks.description %></p>
-            <p><strong>Status</strong> <%= tasks.status %></p>
-            <p><strong>Due Date:</strong> <%= tasks.dueDate %></p>
-            <p><strong>Category:</strong> <%= tasks.category[] %></p>
+            <p><strong>Name:</strong> <%= task.taskName %></p>
+            <p><strong>Title:</strong> <%= task.title %></p>
+            <p><strong>Description:</strong> <%= task.description %></p>
+            <p><strong>Status</strong> <%= task.status %></p>
+            <p><strong>Due Date:</strong> <%= task.dueDate %></p>
         </section>
     </div>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>
