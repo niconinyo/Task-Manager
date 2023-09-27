@@ -27,6 +27,11 @@ const db = require('../models')
 router.get('/new/:userId', (req, res) => {
     res.render('task/new-task', {userId: req.params.userId})
 })
+
+router.get('/:userId', (req, res) => {
+    res.render('task/task-index', {userId: req.params.userId})})
+
+
 router.get('/details/:id', (req, res) => {
     db.tasks.findById(req.params.id)
     .then( task => res.render('task/task-details', {task: task}))

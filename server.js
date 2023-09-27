@@ -60,28 +60,28 @@ app.use(methodOverride('_method'));
 // });
 
 // // When a GET request is sent to `/seed`, the pets collection is seeded
-// app.get('/seed', function (req, res) {
-//     // Remove any existing pets
-//     db.user.deleteMany({})
-//         .then(removedUser => {
-//             console.log(`Removed ${removedUser.deletedCount}`)
-//             // Seed the pets collection with the seed data
-//             db.user.insertMany(db.seedTest.user)
-//                 .then(addedUser => {
-//                     console.log(`Added ${addedUser.length} users created`)
+app.get('/seed', function (req, res) {
+    // Remove any existing pets
+    db.user.deleteMany({})
+        .then(removedUser => {
+            console.log(`Removed ${removedUser.deletedCount}`)
+            // Seed the pets collection with the seed data
+            db.user.insertMany(db.seedTest.user)
+                .then(addedUser => {
+                    console.log(`Added ${addedUser.length} users created`)
                    
-//                 })
-//         })
-//     db.tasks.deleteMany({})
-//         .then(removedTasks => {
-//             console.log(`Removed ${removedTasks.deletedCount}`)
+                })
+        })
+    db.tasks.deleteMany({})
+        .then(removedTasks => {
+            console.log(`Removed ${removedTasks.deletedCount}`)
 
-//             db.tasks.insertMany(db.seedTest.tasks)
-//                 .then(addedTasks => {
-//                     console.log(`Added ${addedTasks.length} tasks created`)
-//                     res.json(addedTasks)
-//         })
-// });})
+            db.tasks.insertMany(db.seedTest.tasks)
+                .then(addedTasks => {
+                    console.log(`Added ${addedTasks.length} tasks created`)
+                    res.json(addedTasks)
+        })
+});})
 
 /* Mount routes
 --------------------------------------------------------------- */
