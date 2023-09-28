@@ -2,17 +2,15 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="styles/landing.css">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <div class="content">Create an account or log in!</div>
-    <section class="hero" >
-        <h1></h1>
-        <h4><i>Lets get started!</i></h4>
-    </section>
-
-    
-
-    <a href="/user/createUser" class="btn">Create New Account!</a>
+    <div class="container" id="glass">
+     <div class="title is-1 is-spaced" id="title">Create An Account Or Log In!</div>
+        <div class="subtitle is-3">Let's Get Started!</div>
+        <button class="button"><a href="/user/createUser" class="btn">Sign Up!</a>
+            </button>
+    </div>
 </body>
 </html>
