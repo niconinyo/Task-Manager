@@ -25,7 +25,34 @@ li{
 
 .card-content{
     display: inline;
+
 }
+p{
+    text-align: center;
+}
+
+.has-background-info-light{
+    height: 50px;
+    border-radius: 20%;
+    
+}
+
+.about{
+    /* display: flex; */
+    /* flex-wrap: wrap;  */
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
 #glass {
     display: flex !important;
     flex-direction: column !important;
@@ -61,7 +88,9 @@ li{
     justify-items: center;
 }
 
-
+#aboutBtn {
+    justify-content: center;
+}
 
 figure{
     display: flex;

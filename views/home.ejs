@@ -12,7 +12,7 @@
     <main>
         <section class="hero">
             <div class="title "><strong>Track Your Tasks</strong></div>
-            <a href="/tasks/new/<%=userId%>" class="btn" id="subhead">Create New Tasks!</a>
+            <a  href="/tasks/new/<%=userId%>" class="btn" id="subhead">Create New Tasks!</a>
         </section>
 
         
@@ -25,15 +25,19 @@
                             <div class="card">
                 
                                 <div class="card-content " id="glass">
-                                <p class="title"><%= task.name %></p>
+                                 <p class="title is-1 has-background-info-light"><%= task.taskName %></p>
+                    
                             <!-- <figcaption> -->
-                                <p class="subtitle"><%= task.title %>, <%= task.description %>, <%= task.status %> <%= task.dueDate %></p>
+                                <p class="subtitle is-2"><%= task.title %></p>
+                                <p class="subtitle is-3"><%= task.description %></p>
+                                <p class="subtitile is-4"><%= task.status %></p>
+                                <p class="subtitle is-6">Task Due: <%= task.dueDate %></p>
                             <!-- </figcaption> -->
                             </div>
                                 <div class="card-footer">
                                     <p class="card-footer-item">
                                         <span>
-                                        <a href="/tasks/details/<%= task._id %>">Learn More</a>
+                                        <a class="button" href="/tasks/details/<%= task._id %>">Details</a>
                                         </span>
                                     </p>
                                 </div>
@@ -46,11 +50,11 @@
             </section>
         
 
-        <section class="about">
-            <h2>About Us</h2>
-            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, commodi sapiente ad illum odio tempora aperiam repellendus velit doloribus cupiditate rerum accusantium deserunt earum quibusdam nisi facilis! Repellat, error doloribus!
+        <section class="about ">
+            <h2 class="title is-6">About Us</h2>
+            <p class="subtitle is-6"> Here to help you better organize and better plan! Stay up to date with all your work.
             </p>
-            <a href="/about" class="btn">Learn More</a>
+            <a class= "button" id="aboutBtn" href="/about" class="btn">Learn More</a>
         </section>
 
         
