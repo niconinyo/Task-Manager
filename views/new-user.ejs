@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <%- include('./partials/head.ejs')%>
-    <link rel="stylesheet" href="styles/new_user.css">
+    <link rel="stylesheet" href="/styles/new-user.css">
 </head>
 <body>
     <%- include('./partials/nav.ejs') %>
     <section class="hero">
-        <h2 class="title">Create a User</h2>
+        <!-- <h2 class="title">Create a User</h2> -->
         
     </section>
 <div class="container" id="glass">
+    <h2 class="title">Create a User</h2>
     <form class="field" method="POST" action="/user">
         <!-- Name input -->
         <label class="label" for="username">Username:</label>
@@ -18,21 +19,21 @@
         <br>
         <!-- Age input -->
         <label class="label" for="firstName">First Name:</label>
-        <input class="input is-normal is-rounded is-hovered" type="text" id="firstName" name="firstName"  required>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="firstName" name="firstName" placeholder="ex.John"  required>
         <br>
         <!-- Breed input -->
         <label class="label" for="lastName">Last Name:</label>
-        <input class="input is-normal is-rounded is-hovered" type="text" id="lastName" name="lastName" required>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="lastName" name="lastName" placeholder="ex. Doe" required>
         <br>
         <!-- Species input -->
         <label class="label" for="email">Email:</label>
-        <input class="input is-normal is-rounded is-hovered" type="text" id="email" name="email" required>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="email" name="email" placeholder="example@gmail.com" required>
         <br>
         
         <label class="label" for="password">Password:</label>
-        <input class="input is-normal is-rounded is-hovered" type="text" id="password" name="password" required>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="password" name="password" placeholder="Password123" required>
         <br>
-        <input type="submit" value="Create Account">
+        <input class = button type="submit" value="Create Account">
     </form>
 </div>
 

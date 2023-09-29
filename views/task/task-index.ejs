@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'Furever Friends'}) %>
+    <%- include('../partials/head.ejs', {title: 'Furever Friends'}) %>
     <link rel="stylesheet" href="/styles/pet-index.css">
 </head>
 
 <body>
-    <%- include('./partials/nav.ejs') %>
+    <%- include('../partials/nav.ejs') %>
 
     <section class="hero">
         <h2>Tasks</h2>
@@ -23,7 +23,7 @@
                     
                         <figcaption>
                             <h4><%= task.taskName %></h4>
-                            <p><%= task.title %>, <%= pet.status %>, <%= pet.dueDate %></p>
+                            <p><%= task.title %>, <%= task.status %>, <%= pet.dueDate %></p>
                             <a href="/controllers/user/tasks/<%= task._id %>">Learn More</a>
                         </figcaption>
                     </figure>
@@ -33,7 +33,7 @@
         </section>
     </main>
 
-    <%- include('./partials/footer.ejs') %>
+    <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

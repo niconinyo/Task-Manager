@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('./partials/head.ejs')%>
+    <link rel="stylesheet" href="/styles/home.css">
 </head>
 
 
@@ -12,9 +11,40 @@
 
     <main>
         <section class="hero">
-            <h2>Track Your Tasks</h2>
-            <a href="/tasks/new/<%=userId%>" class="btn">Create New Tasks!</a>
+            <div class="title "><strong>Track Your Tasks</strong></div>
+            <a href="/tasks/new/<%=userId%>" class="btn" id="subhead">Create New Tasks!</a>
         </section>
+
+        
+        
+            <section class="tasks">
+                <ul>
+                    <% for (let task of tasks) { %>
+                    <li>
+                        <!-- <figure> -->
+                            <div class="card">
+                
+                                <div class="card-content " id="glass">
+                                <p class="title"><%= task.name %></p>
+                            <!-- <figcaption> -->
+                                <p class="subtitle"><%= task.title %>, <%= task.description %>, <%= task.status %> <%= task.dueDate %></p>
+                            <!-- </figcaption> -->
+                            </div>
+                                <div class="card-footer">
+                                    <p class="card-footer-item">
+                                        <span>
+                                        <a href="/tasks/details/<%= task._id %>">Learn More</a>
+                                        </span>
+                                    </p>
+                                </div>
+                            
+                            </div>
+                        <!-- </figure> -->
+                    </li>
+                    <% } %>
+                </ul>
+            </section>
+        
 
         <section class="about">
             <h2>About Us</h2>
