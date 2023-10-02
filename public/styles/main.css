@@ -6,4 +6,7 @@
 .navbar-item {
     display: flex;
     padding-top: 0%;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
 }

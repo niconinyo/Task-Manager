@@ -1,0 +1,66 @@
+header {
+    display: flex !important;
+    align-items: space-between !important;
+    align-content: space-between !important   ;
+    justify-items: center !important;
+    margin-left: 470px !important;
+}
+
+#glasses {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-self: center !important;
+    background: rgba( 251, 251, 251, 0.1 ) !important;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    margin-top: 200px;
+    height: 550px;
+    width: 500px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.title {
+    margin-top: 10px;
+    align-self: center;
+}
+.subtitle{
+    align-self: center;
+}
+.button {
+    left: 45px;
+  
+    align-self: center;
+
+    
+}
+
+.label {
+    text-align: center;
+ }
+
+ input {
+    text-align: center;
+ }
+ 
+.select {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    left: 55px;
+ }
+
+
+
+
+ footer{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}

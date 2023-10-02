@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <%- include('../partials/head.ejs')%>
+    <link rel="stylesheet" href="/styles/new-task.css">
 
 
 <body>
     <%- include('../partials/nav.ejs') %>
-
-    <section class="hero">
+<div class="container" id="glasses">
+    <section class="hero title is-1">
         <h2>Create a Task</h2>
-        <h4><i>Time to get to work!</i></h4>
+        <h4 class="subtitle"><i>Time to get to work!</i></h4>
     </section>
 
-    <form method="POST" action="/tasks">
+    <form class="field" method="POST" action="/tasks">
         <!-- Name input -->
-        <label for="taskName">Name:</label>
-        <input type="text" id="taskName" name="taskName" required>
+        <label class="label" for="taskName">Name:</label>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="taskName" name="taskName" required>
         <br>
         <!-- Age input -->
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title"  required>
+        <label class="label" for="title">Title:</label>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="title" name="title"  required>
         <br>
         <!-- Breed input -->
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value="Unknown">
+        <label class="label" for="description">Description:</label>
+        <input class="input is-normal is-rounded is-hovered" type="text" id="description" name="description">
         <br>
         <!-- Species input -->
-        <label for="status">Status:</label>
-        <select id="status" name="status" required>
+        <label class="label" for="status">Status:</label>
+        <select class="select" name="status" required>
             <option value="Unfinished">Unfinished</option>
             <option value="Almost done">Almost done</option>
             <option value="Finished">Finished</option>
         </select>
         <br>
-        <label for="dueDate">Have Completed By:</label>
-        <input type="date" id="dueDate" name="dueDate" value="Unknown">
+        <label class="label" for="dueDate">Have Completed By:</label>
+        <input class="input is-normal is-rounded is-hovered" type="date" id="dueDate" name="dueDate" value="Unknown">
         <br>
         
         <input type="text" hidden id="userId" name="creator" value="<%=userId%>">
         <br>
-        <input type="submit" value="Create Task">
+        <input class="button" type="submit" value="Create Task">
     </form>
-
-    
+</div>  
+<%- include('../partials/footer.ejs') %> 
 </body>
 
 </html>
