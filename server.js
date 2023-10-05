@@ -28,7 +28,7 @@ const app = express();
 
 
 // Detect if running in a dev environment
-if (process.env.ON_HEROKU === 'false') {
+if(process.env.ON_HEROKU === 'false') {
     // Configure the app to refresh the browser when nodemon restarts
     const liveReloadServer = livereload.createServer();
     liveReloadServer.server.once("connection", () => {
